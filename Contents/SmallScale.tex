@@ -1241,49 +1241,74 @@ $350^o$	&301.150	&556.155	&118.414	&12.000	&12.000	&518.400	&518.400	&1036.800 \
     
     The second scenario mentioned would happen if the three wind turbine $T_1$, $T_2$, and $T_3$ are located at $(0,1)$, $(1,0)$ and $(4,4)$ respectively where the wind blows at $\theta=45^o$. For each pair of wind turbines, the computation of  y-values ($y_{12}$, $y_{13}$, $y_{23}$), and the resulting radius of the individual wakes ($r_{12}$, $r_{13}$, $r_{23}$) are shown below.
     \begin{align*}
-    	h_{12} &= \sqrt{(0-1)^2+{1-0)^2} \\
-    	h_{13} &= \sqrt{(0-4)^2+{1-4)^2} \\
-    	h_{23} &= \sqrt{(1-4)^2+{0-4)^2} \\
-    	\phi_{12} &= tan^{-1}\left|\frac{1-0}{0-1}\right| \\
-    	\phi_{13} &= tan^{-1}\left|\frac{1-4}{0-4}\right| \\
-    	\phi_{23} &= tan^{-1}\left|\frac{0-4}{1-4}\right|
+    	h_{12} &= \sqrt{(0-1)^2+(1-0)^2} \\
+    	h_{13} &= \sqrt{(0-4)^2+(1-4)^2} \\
+    	h_{23} &= \sqrt{(1-4)^2+(0-4)^2} \\
+    	\phi_{12} &= tan^{-1}\left| \frac{1-0}{0-1}\right| \\
+    	\phi_{13} &= tan^{-1}\left| \frac{1-4}{0-4}\right| \\
+    	\phi_{23} &= tan^{-1}\left| \frac{0-4}{1-4}\right|
     \end{align*}
     \begin{align*}
         y_{12}
-        &=200m\cdot \left( \sqrt{(0-1)^2+{1-0)^2} \right)sin \left| (45^o\;mod\;90^o) - tan^{-1}\left|\frac{1-0}{0-1}\right| \right| \\
-        &=\left( 565.685m \right)(0.707^o) \\
-        &= 400\;meters
+        &=200m\cdot \left( \sqrt{(0-1)^2+(1-0)^2} \right) sin \left| (40^o\;mod\;90^o) - tan^{-1}\left|\frac{1-0}{0-1}\right| \right| \\
+        &=\left( 282.843m \right)(0.996^o) \\
+        &= 281.767\;meters
     \end{align*}
     \begin{align*}
         y_{13}
-        &=200m\cdot \left( \sqrt{(0-4)^2+{1-4)^2} \right)sin \left| (45^o\;mod\;90^o) - tan^{-1}\left|\frac{1-4}{0-4}\right| \right| \\
-        &=\left( 1000.000m \right)(0.800^o) \\
-        &= 800.000\;meters
+        &=200m\cdot \left( \sqrt{(0-4)^2+(1-4)^2} \right) sin \left| (40^o\;mod\;90^o) - tan^{-1}\left|\frac{1-4}{0-4}\right| \right| \\
+        &=\left( 1000.000m \right)(0.055^o) \\
+        &= 54.602\;meters
     \end{align*}
     \begin{align*}
         y_{23}
-        &=200m\cdot \left( \sqrt{(1-4)^2+{0-4)^2} \right)sin \left| (45^o\;mod\;90^o) - tan^{-1}\left|\frac{0-4}{1-4}\right| \right| \\
-        &=\left( 447.214m \right)(0.894^o) \\
-        &= 400.000\;meters
+        &=200m\cdot \left( \sqrt{(1-4)^2+(0-4)^2} \right) sin \left| (40^o\;mod\;90^o) - tan^{-1}\left|\frac{0-4}{1-4}\right| \right| \\
+        &=\left( 1000.000m \right)(0.227^o) \\
+        &= 227.161\;meters
     \end{align*}
     \begin{align*}
         r_{12}
         &= ax+r_o \\
-        &= (0.326794)\left( 200m\cdot \left( \sqrt{(0-1)^2+{1-0)^2} \right)cos \left| (45^o\;mod\;90^o) - tan^{-1}\left|\frac{1-0}{0-1}\right| \right|  \right) + 20m \\
-        &=(0.326794)(400.000m)+20m \\
-        &= 150.718\;meters
+        &= (0.326794)\left( 200m\cdot \left( \sqrt{(0-1)^2+(1-0)^2} \right)cos \left| (40^o\;mod\;90^o) - tan^{-1}\left|\frac{1-0}{0-1}\right| \right|  \right) + 20m \\
+        &=(0.326794)(281.766m)+20m \\
+        &= 112.080\;meters
     \end{align*}
     \begin{align*}
         r_{13}
         &= ax+r_o \\
-        &= (0.326794)\left( 200m\cdot \left( \sqrt{(0-4)^2+{1-4)^2} \right)sin \left| (45^o\;mod\;90^o) - tan^{-1}\left|\frac{1-4}{0-4}\right| \right| \right) + 20m \\
-        &=(0.326794)(800.000m)+20m \\
-        &= 281.435\;meters\;meters
+        &= (0.326794)\left( 200m\cdot \left( \sqrt((0-4)^2+{1-4)^2} \right)cos \left| (40^o\;mod\;90^o) - tan^{-1}\left|\frac{1-4}{0-4}\right| \right| \right) + 20m \\
+        &=(0.326794)(998.508m)+20m \\
+        &= 346.307\;meters
     \end{align*}
     \begin{align*}
         r_{23}
         &= ax+r_o \\
-        &= (0.326794)\left( 200m\cdot \left( \sqrt{(1-4)^2+{0-4)^2} \right)sin \left| (45^o\;mod\;90^o) - tan^{-1}\left|\frac{0-4}{1-4}\right| \right| \right) + 20m \\
-        &=(0.326794)(200.000m)+20m \\
-        &= 85.359\;meters\;meters
+        &= (0.326794)\left( 200m\cdot \left( \sqrt{(1-4)^2+(0-4)^2} \right)cos \left| (40^o\;mod\;90^o) - tan^{-1}\left|\frac{0-4}{1-4}\right| \right| \right) + 20m \\
+        &=(0.326794)(973.857)+20m \\
+        &= 338.251\;meters
+    \end{align*}
+    
+    Since $y_{13}$ and $y_{23}$ are less than $r_{13}$ and $r_{23}$ respectively, it means that wind turbine $T_3$ is affected by the wake of wind turbines $T_1$ and $T_2$. The expected wind speed at $T_3$ due to the wake of individual wakes of win turbines $T_1$ and $T_2$ are as follow.
+    \begin{align*}
+        u_{31} &= u_\infty \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (998.508m)} \right)^2 \right] \\
+        &=11.591\;m/s
+    \end{align*}
+    \begin{align*}
+        u_{32} &= u_\infty \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (973.857m)} \right)^2 \right] \\
+        &=11.575\;m/s
+    \end{align*}
+    Then, the wind speed at $T_3$ due to the wakes of wind turbines $T_1$ and $T_2$ is as follows.
+    \begin{align*}
+        u_3 &= u_\infty\left( 1-\sqrt{\left( 1-\frac{u_{31}}{u_1} \right)^2 + \left( 1-\frac{u_{32}}{u_2} \right)^2} \right) \\
+        &= (12m/s)\left( 1-\sqrt{\left( 1-\frac{11.591m/s}{12.000m/s} \right)^2 + \left( 1-\frac{11.575m/s}{12.000m/s} \right)^2} \right) \\
+        &= 11.410\;m/s
+    \end{align*}
+    Hence, the power output of wind turbine $T_3$ at wind direction $\theta=40^o$ is
+    \begin{align*}
+        P_{3[\theta=40^o]} &= 0.3(11.410m/s)^3 \\
+        P_{3[\theta=40^o]} &= 445.653\;kiloWatts
+    \end{align*}
+    while the upstream wind turbines $T_1$ and $T_2$ have power outputs of
+    \begin{align*}
+        P_{1[\theta=40^o]}=P_{2[\theta=40^o]} = 518.400\;kiloWatts
     \end{align*}
