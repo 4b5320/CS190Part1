@@ -66,7 +66,7 @@ To further discuss the details of the algorithm, we used it on a smaller version
     \end{equation}
     where $P_1$ is the power output of wind turbines $T_1$ and $P_2$ is the power output of wind turbine $T_2$. The same power output will be experienced by a wind turbines as long as it is an upstream one. However, if one of them is not an upstream wind turbines, this wind turbine has a chance of being affected by the wake of the upstream wind turbine.
     
-    Considering the locations of wind turbines $T_1$ and $P_2$ where one of them is upstream, equation \ref{finalX} becomes
+    Considering the locations of wind turbines $T_1$ and $P_2$ where one of them is upstream, equation \ref{xSmall} becomes
     \begin{equation} \label{xSmall}
         x =
         \begin{cases} 
@@ -1220,6 +1220,70 @@ $350^o$	&301.150	&556.155	&118.414	&12.000	&12.000	&518.400	&518.400	&1036.800 \
         r_{12}
         &= ax+r_o \\
         &= (0.326794)\left( 200m\cdot \left( \sqrt{(0-2)^2+(0-2)^2} \right)cos \left| (0^o\;mod\;90^o) - tan^{-1}\left|\frac{0-4}{0-3}\right| \right| \right) + 20m \\
-        &=
+        &=(0.326794)(400.000m)+20m \\
+        &= 150.718\;meters
     \end{align*}
+    \begin{align*}
+        r_{13}
+        &= ax+r_o \\
+        &= (0.326794)\left( 200m\cdot \left( \sqrt{(0-3)^2+(0-4)^2} \right)cos \left| (0^o\;mod\;90^o) - tan^{-1}\left|\frac{0-4}{0-3}\right| \right| \right) + 20m \\
+        &=(0.326794)(800.000m)+20m \\
+        &= 281.435\;meters
+    \end{align*}
+    \begin{align*}
+        r_{23}
+        &= ax+r_o \\
+        &= (0.326794)\left( 200m\cdot \left( \sqrt{(2-3)^2+(2-4)^2} \right)cos \left| (0^o\;mod\;90^o) - tan^{-1}\left|\frac{0-4}{0-3}\right| \right| \right) + 20m \\
+        &=(0.326794)(200.000m)+20m \\
+        &= 85.359\;meters
+    \end{align*}
+    Since every y-values is not less than the respective resulting radius of each pair of wind turbines, it means that every wind turbine is not affected by the wake of any other wind turbines on the wind farm. Therefore, there are no wake interactions between the wind turbines $T_1$, $T_2$ and $T_3$. With that, given the wind speed of $12m/s$, the power output of each wind turbine is 518.400 kiloWatts.
     
+    The second scenario mentioned would happen if the three wind turbine $T_1$, $T_2$, and $T_3$ are located at $(0,1)$, $(1,0)$ and $(4,4)$ respectively where the wind blows at $\theta=45^o$. For each pair of wind turbines, the computation of  y-values ($y_{12}$, $y_{13}$, $y_{23}$), and the resulting radius of the individual wakes ($r_{12}$, $r_{13}$, $r_{23}$) are shown below.
+    \begin{align*}
+    	h_{12} &= \sqrt{(0-1)^2+{1-0)^2} \\
+    	h_{13} &= \sqrt{(0-4)^2+{1-4)^2} \\
+    	h_{23} &= \sqrt{(1-4)^2+{0-4)^2} \\
+    	\phi_{12} &= tan^{-1}\left|\frac{1-0}{0-1}\right| \\
+    	\phi_{13} &= tan^{-1}\left|\frac{1-4}{0-4}\right| \\
+    	\phi_{23} &= tan^{-1}\left|\frac{0-4}{1-4}\right|
+    \end{align*}
+    \begin{align*}
+        y_{12}
+        &=200m\cdot \left( \sqrt{(0-1)^2+{1-0)^2} \right)sin \left| (45^o\;mod\;90^o) - tan^{-1}\left|\frac{1-0}{0-1}\right| \right| \\
+        &=\left( 565.685m \right)(0.707^o) \\
+        &= 400\;meters
+    \end{align*}
+    \begin{align*}
+        y_{13}
+        &=200m\cdot \left( \sqrt{(0-4)^2+{1-4)^2} \right)sin \left| (45^o\;mod\;90^o) - tan^{-1}\left|\frac{1-4}{0-4}\right| \right| \\
+        &=\left( 1000.000m \right)(0.800^o) \\
+        &= 800.000\;meters
+    \end{align*}
+    \begin{align*}
+        y_{23}
+        &=200m\cdot \left( \sqrt{(1-4)^2+{0-4)^2} \right)sin \left| (45^o\;mod\;90^o) - tan^{-1}\left|\frac{0-4}{1-4}\right| \right| \\
+        &=\left( 447.214m \right)(0.894^o) \\
+        &= 400.000\;meters
+    \end{align*}
+    \begin{align*}
+        r_{12}
+        &= ax+r_o \\
+        &= (0.326794)\left( 200m\cdot \left( \sqrt{(0-1)^2+{1-0)^2} \right)cos \left| (45^o\;mod\;90^o) - tan^{-1}\left|\frac{1-0}{0-1}\right| \right|  \right) + 20m \\
+        &=(0.326794)(400.000m)+20m \\
+        &= 150.718\;meters
+    \end{align*}
+    \begin{align*}
+        r_{13}
+        &= ax+r_o \\
+        &= (0.326794)\left( 200m\cdot \left( \sqrt{(0-4)^2+{1-4)^2} \right)sin \left| (45^o\;mod\;90^o) - tan^{-1}\left|\frac{1-4}{0-4}\right| \right| \right) + 20m \\
+        &=(0.326794)(800.000m)+20m \\
+        &= 281.435\;meters\;meters
+    \end{align*}
+    \begin{align*}
+        r_{23}
+        &= ax+r_o \\
+        &= (0.326794)\left( 200m\cdot \left( \sqrt{(1-4)^2+{0-4)^2} \right)sin \left| (45^o\;mod\;90^o) - tan^{-1}\left|\frac{0-4}{1-4}\right| \right| \right) + 20m \\
+        &=(0.326794)(200.000m)+20m \\
+        &= 85.359\;meters\;meters
+    \end{align*}
