@@ -1,0 +1,54 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{indentfirst, graphicx, url, hyperref, setspace, titlesec, enumitem, listings, color, amsmath, multicol, multirow, subfig, float,amssymb}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  commentstyle=\color{dkgreen},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\newlist{substeps}{enumerate}{1}
+\setlist[substeps, 1]{label = \textbf{\alph*.}}
+\setlist{  
+  listparindent=\parindent,
+  parsep=0pt,
+}
+
+\begin{document}
+    \input{Contents/Title.tex}
+    
+    \chapter{Introduction}
+        \doublespacing
+        \input{Contents/Introduction.tex}
+    
+    \singlespacing
+    \chapter{Model}
+        \doublespacing
+        \input{Contents/Model.tex}
+    
+    \singlespacing
+    \chapter{Methodology}
+        \doublespacing
+        \input{Contents/Methodology.tex}
+        
+    \singlespacing
+    \chapter{Solution of a Small Scale Problem}
+        \doublespacing
+        \input{Contents/SmallScale.tex}
+        
+    \newpage
+    \bibliographystyle{IEEEtran}
+    \bibliography{references.bib}
+    
+\end{document}

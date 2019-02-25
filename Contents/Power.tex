@@ -1,0 +1,35 @@
+
+Power is defined as the change of energy over time. It describes how much energy is transferred or used over a period of time. With this, power can be describe as
+\begin{equation}
+    P = \frac{dE}{dt}
+\end{equation}
+where $P$ is power $\frac{dE}{dt}$ is the change of Energy over the change of time. Since the Wind turbine uses Kinetic energy to convert into power, using the Kinetic Energy equation,
+\begin{equation}
+    E = \frac{1}{2}mv^{2}
+\end{equation}
+where $E$ is the Kinetic energy, $v$ is the velocity of the wind and $m$ is the mass of the wind. The power can of the wind can now be expressed as
+\begin{equation}
+    P = \frac{dE}{dt} = \frac{1}{2}v^{2}\frac{dm}{dt}
+\end{equation}
+where $\frac{dm}{dt}$ is the mass flow rate. The velocity of the wind is assumed to remain constant over a period of time, and the mass of the wind changes depending on the displacement of the wind through the rotor area.
+
+The mass flow rate can be defined as
+\begin{equation}
+    \frac{dm}{dt} = \rho A\frac{dx}{dt}
+\end{equation}
+where $A$ is the area of the wind at the wind turbine, $\rho$ is the wind density and $\frac{dx}{dt}$ is distance over time or the velocity $v$ of the wind. Since $A$ is the area where the wind is occupying at the wind turbine, $A$ is the total area where the rotor spans while spinning (rotor area). Using this equation, the power of the wind turbine is now
+\begin{equation}
+    P = \frac{1}{2}v^{2}\frac{dm}{dt} = \frac{1}{2}v^{3}\rho A
+\end{equation}
+Note that the wind turbine cannot absorb all the power from the wind. In fact, the Power Coefficient $C_p$ determines how much Kinetic Energy from the wind that can be converted into mechanical energy at maximum. There is a percentage of energy lost from the wind when the wind turbine is operating. Thus, the Power of wind turbine is
+\begin{equation}
+    P =  \frac{1}{2}v^{3}\rho A C_{p}
+\end{equation}
+
+Using the specifications of the wind turbine with $40m$ rotor diameter along with the normal air density $\rho = 1.225kg/m^{3}$ and standard average power coefficient of $C_{p}=0.4$, the power ($kW$) of the wind turbine used in this experiment is 
+\begin{align*}
+    P &=  \frac{1}{2}v^{3}(1.225kg/m^3)(\pi (20m)^2)(0.4)\\
+        &= 307.87v^{3} &(in \;Watts) \\
+        &= 0.3v^3 &(in \;kiloWatts)
+\end{align*}
+
