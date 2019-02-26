@@ -1237,58 +1237,78 @@ $350^o$	&301.150	&556.155	&118.414	&12.000	&12.000	&518.400	&518.400	&1036.800 \
         &=(0.326794)(200.000m)+20m \\
         &= 85.359\;meters
     \end{align*}
-    Since every y-values is not less than the respective resulting radius of each pair of wind turbines, it means that every wind turbine is not affected by the wake of any other wind turbines on the wind farm. Therefore, there are no wake interactions between the wind turbines $T_1$, $T_2$ and $T_3$. With that, given the wind speed of $12m/s$, the power output of each wind turbine is 518.400 kiloWatts.
+    Since every y-values is not less than the respective resulting radius of each pair of wind turbines, it means that every wind turbine is not affected by the wake of any other wind turbines on the wind farm. Therefore, there are no wake interactions between the wind turbines $T_1$, $T_2$ and $T_3$. With that, given the wind speed of $12m/s$, the power output of each wind turbine is 518.400 kiloWatts, giving a total power output for $\theta=0^o$ wind direction of
+	\begin{align*}
+		P_{tot[\theta=0^o]} &= 518.400kW + 518.400kW + 518.400kW \\
+		&=1555.200\;kiloWatts
+	\end{align*}
     
-    The second scenario mentioned would happen if the three wind turbine $T_1$, $T_2$, and $T_3$ are located at $(0,1)$, $(1,0)$ and $(4,4)$ respectively where the wind blows at $\theta=45^o$. For each pair of wind turbines, the computation of  y-values ($y_{12}$, $y_{13}$, $y_{23}$), and the resulting radius of the individual wakes ($r_{12}$, $r_{13}$, $r_{23}$) are shown below.
-    \begin{align*}
-    	h_{12} &= \sqrt{(0-1)^2+(1-0)^2} \\
-    	h_{13} &= \sqrt{(0-4)^2+(1-4)^2} \\
-    	h_{23} &= \sqrt{(1-4)^2+(0-4)^2} \\
-    	\phi_{12} &= tan^{-1}\left| \frac{1-0}{0-1}\right| \\
-    	\phi_{13} &= tan^{-1}\left| \frac{1-4}{0-4}\right| \\
-    	\phi_{23} &= tan^{-1}\left| \frac{0-4}{1-4}\right|
-    \end{align*}
+    The second scenario mentioned would happen if the three wind turbine $T_1$, $T_2$, and $T_3$ are located at $(0,1)$, $(1,0)$ and $(4,4)$ respectively where the wind blows at $\theta=220^o$. For each pair of wind turbines, the computation of  y-values ($y_{12}$, $y_{13}$, $y_{23}$), and the resulting radius of the individual wakes ($r_{12}$, $r_{13}$, $r_{23}$) are shown below.
     \begin{align*}
         y_{12}
-        &=200m\cdot \left( \sqrt{(0-1)^2+(1-0)^2} \right) sin \left| (40^o\;mod\;90^o) - tan^{-1}\left|\frac{1-0}{0-1}\right| \right| \\
-        &=\left( 282.843m \right)(0.996^o) \\
-        &= 281.767\;meters
+        &=200m\cdot \left( \sqrt{(0-1)^2+(1-0)^2} \right) sin \left| (220^o\;mod\;90^o) - tan^{-1}\left|\frac{1-0}{0-1}\right| \right| \\
+        &=\left( 282.843m \right)(0.087^o) \\
+        &= 24.607\;meters
     \end{align*}
     \begin{align*}
         y_{13}
-        &=200m\cdot \left( \sqrt{(0-4)^2+(1-4)^2} \right) sin \left| (40^o\;mod\;90^o) - tan^{-1}\left|\frac{1-4}{0-4}\right| \right| \\
+        &=200m\cdot \left( \sqrt{(0-4)^2+(1-4)^2} \right) sin \left| (220^o\;mod\;90^o) - tan^{-1}\left|\frac{1-4}{0-4}\right| \right| \\
         &=\left( 1000.000m \right)(0.055^o) \\
         &= 54.602\;meters
     \end{align*}
     \begin{align*}
         y_{23}
-        &=200m\cdot \left( \sqrt{(1-4)^2+(0-4)^2} \right) sin \left| (40^o\;mod\;90^o) - tan^{-1}\left|\frac{0-4}{1-4}\right| \right| \\
+        &=200m\cdot \left( \sqrt{(1-4)^2+(0-4)^2} \right) sin \left| (220^o\;mod\;90^o) - tan^{-1}\left|\frac{0-4}{1-4}\right| \right| \\
         &=\left( 1000.000m \right)(0.227^o) \\
         &= 227.161\;meters
     \end{align*}
     \begin{align*}
         r_{12}
         &= ax+r_o \\
-        &= (0.326794)\left( 200m\cdot \left( \sqrt{(0-1)^2+(1-0)^2} \right)cos \left| (40^o\;mod\;90^o) - tan^{-1}\left|\frac{1-0}{0-1}\right| \right|  \right) + 20m \\
+        &= (0.326794)\left( 200m\cdot \left( \sqrt{(0-1)^2+(1-0)^2} \right)cos \left| (220^o\;mod\;90^o) - tan^{-1}\left|\frac{1-0}{0-1}\right| \right|  \right) + 20m \\
         &=(0.326794)(281.766m)+20m \\
         &= 112.080\;meters
     \end{align*}
     \begin{align*}
         r_{13}
         &= ax+r_o \\
-        &= (0.326794)\left( 200m\cdot \left( \sqrt((0-4)^2+{1-4)^2} \right)cos \left| (40^o\;mod\;90^o) - tan^{-1}\left|\frac{1-4}{0-4}\right| \right| \right) + 20m \\
+        &= (0.326794)\left( 200m\cdot \left( \sqrt((0-4)^2+{1-4)^2} \right)cos \left| (220^o\;mod\;90^o) - tan^{-1}\left|\frac{1-4}{0-4}\right| \right| \right) + 20m \\
         &=(0.326794)(998.508m)+20m \\
         &= 346.307\;meters
     \end{align*}
     \begin{align*}
         r_{23}
         &= ax+r_o \\
-        &= (0.326794)\left( 200m\cdot \left( \sqrt{(1-4)^2+(0-4)^2} \right)cos \left| (40^o\;mod\;90^o) - tan^{-1}\left|\frac{0-4}{1-4}\right| \right| \right) + 20m \\
-        &=(0.326794)(973.857)+20m \\
+        &= (0.326794)\left( 200m\cdot \left( \sqrt{(1-4)^2+(0-4)^2} \right)cos \left| (220^o\;mod\;90^o) - tan^{-1}\left|\frac{0-4}{1-4}\right| \right| \right) + 20m \\
+        &=(0.326794)(973.857m)+20m \\
         &= 338.251\;meters
     \end{align*}
     
-    Since $y_{13}$ and $y_{23}$ are less than $r_{13}$ and $r_{23}$ respectively, it means that wind turbine $T_3$ is affected by the wake of wind turbines $T_1$ and $T_2$. The expected wind speed at $T_3$ due to the wake of individual wakes of win turbines $T_1$ and $T_2$ are as follow.
+It is shown that the y-values of the wind turbine pairs are less than than the r-values. However, this doesn't mean that all pairs have wake interactions. Note that the formulas for x-value and, y-value only work if one turbine is covered by the swept area of the other wind turbine. From the the current configuration of wind turbines $T-1$, $T_2$ and $T_3$, the pair $\{T_1,T_2\}$ cannot show wake interaction as neither of them is covered by the swept area of the other. Hence, only the pairs $\{T_1,T_3\}$ and $\{T_2,T_3\}$ have single wake interactions where the wind turbine $T_3$ is the upstream wind turbine. With/that, the wind speed at wind turbine $T_3$ is $12\;m/s$ while the wind speeds at $T_1$ and $T_2$ are
+	\begin{align*}
+        u_{1} &= u_\infty \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (998.508m)} \right)^2 \right] \\
+        &=11.591\;m/s
+    \end{align*}
+    \begin{align*}
+        u_{2} &= u_\infty \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (973.857m)} \right)^2 \right] \\
+        &=11.575\;m/s
+    \end{align*}
+with wind power output of
+	\begin{align*}
+		P_1=0.3(11.591m/s)^3 \\
+		=467.180\;kiloWatts
+	\end{align*}
+	\begin{align*}
+		P_2=0.3(11.575m/s)^3 \\
+		=465.248\;kiloWatts
+	\end{align*}
+giving a total power output for $\theta=220^o$ wind direction of
+	\begin{align*}
+		P_{tot[\theta=220^o]} &= 467.180kW + 465.248kW + 518.400kW \\
+		&=1450.828\;kiloWatts
+	\end{align*}
+    
+    Changing the wind direction to $\theta=40^o$ would portray the third scenario. The y-values and r-values for each pair of wind turbines would be the same since the new wind direction is the opposite of the previous one, that is, the wind is reversed. Thus, the single wake interactions would exist for wind turbines pairs $\{T_1,T_3\}$ and $\{T_2,T_3\}$ where the wind turbine $T_3$ is the downstream wind turbine for both pairs. The expected wind speed at $T_3$ due to the wake of individual wakes of win turbines $T_1$ and $T_2$ are as follow.
     \begin{align*}
         u_{31} &= u_\infty \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (998.508m)} \right)^2 \right] \\
         &=11.591\;m/s
@@ -1312,3 +1332,52 @@ $350^o$	&301.150	&556.155	&118.414	&12.000	&12.000	&518.400	&518.400	&1036.800 \
     \begin{align*}
         P_{1[\theta=40^o]}=P_{2[\theta=40^o]} = 518.400\;kiloWatts
     \end{align*}
+   giving a total power output for $\theta=40^o$ wind direction of
+	\begin{align*}
+		P_{tot[\theta=40^o]} &= 518.400kW + 518.400kW + 445.653kW \\
+		&=1482.453\;kiloWatts
+	\end{align*}
+	
+	Consider a configuration of three wind turbines where the wind turbines are align in row, say the locations for wind turbines $T_1$, $T_2$ and $T_3$ are at $(0,2)$, $(2,2)$ and $(4,2)$ where the wind blows at a direction of $\theta=0^o$. This would show the fourth scenario. From this, it is obvious the the x-values are 400 meters for wind turbine pairs $\{T_1,T_2\}$ and $\{T_2,T_3\}$, and 800 meters. Also, the y-value for every pair of wind turbines is always 0 meters because the three wind turbines aligned with the direction of the wind. With that, the wind speed and power output at wind turbine $T_1$ would be
+	\begin{align*}
+		u_{1[\theta=0^o]} &=12\;m/s \\
+		P_{1[\theta=0^o]} &=518.400\;kiloWatts
+	\end{align*}
+while the wind turbine $T_2$ is affected by the wake of wind turbine $T_1$. Hence, the wind speed at $T_2$ would be
+	\begin{align*}
+        u_{2[\theta=0^o]} &= u_\infty \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (400.000m)} \right)^2 \right] \\
+        &=10.584\;m/s
+    \end{align*}
+where the power output of $T_2$ is
+	\begin{align*}
+        P_{2[\theta=0^o]} &= 0.3(10.584m/s)^3 \\
+        P_{2[\theta=0^o]} &= 355.689\;kiloWatts
+    \end{align*}
+However, wind turbine $T_3$ is affected by the wake of both $T_1$ and $T_2$. The expected wind speeds at $T_3$ due to individual wakes of $T_1$ and $T_2$ are as follows.
+	\begin{align*}
+        u_{31} &= (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (800.000m)} \right)^2 \right] \\
+        &=11.429\;m/s
+    \end{align*}
+    \begin{align*}
+        u_{32} &= (10.584m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (400.000m)} \right)^2 \right] \\
+        &=9.336\;m/s
+    \end{align*}
+Then, the wind speed at $T_3$ due to the wakes of wind turbines $T_1$ and $T_2$ is as follows.
+    \begin{align*}
+        u_3 &= u_\infty\left( 1-\sqrt{\left( 1-\frac{u_{31}}{u_1} \right)^2 + \left( 1-\frac{u_{32}}{u_2} \right)^2} \right) \\
+        &= (12m/s)\left( 1-\sqrt{\left( 1-\frac{11.429m/s}{12.000m/s} \right)^2 + \left( 1-\frac{9.336m/s}{12.000m/s} \right)^2} \right) \\
+        &= 9.275\;m/s
+    \end{align*}
+Hence, the power output of wind turbine $T_3$ at wind direction $\theta=0^o$ is
+    \begin{align*}
+        P_{3[\theta=0^o]} &= 0.3(9.275m/s)^3 \\
+        &= 239.404\;kiloWatts
+    \end{align*}
+giving a total power output for $\theta=0^o$ wind direction of
+	\begin{align*}
+		P_{tot[\theta=0^o]} &= 518.400kW + 355.689kW + 239.404kW \\
+		&=1113.493\;kiloWatts
+	\end{align*}
+	
+	\subsubsection{Best Configuration}
+	tetst
