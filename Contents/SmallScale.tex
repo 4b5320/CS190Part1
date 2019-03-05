@@ -1197,7 +1197,14 @@ $350^o$	&301.150	&556.155	&118.414	&12.000	&12.000	&518.400	&518.400	&1036.800 \
         u_3 &= u_\infty
     \end{align*} \hfill $\blacksquare$
     
-    For example, let there be three wind turbines $T_1$, $T_2$ and $T_3$ installed on the same 1km by 1km wind farm with coordinates $(0,0)$, $(2,2)$ and $(3,4)$ respectively, a wind direction of $0^o$ and a wind speed of $12m/s$. First is to find the three pairs to determine if there are any single wake interactions. The pairs for this example would be $\{T_1,T_2\}$, $\{T_1,T_3\}$ and $\{T_2,T_3\}$. For each pair of wind turbines, the computation of  y-values ($y_{12}$, $y_{13}$, $y_{23}$), and the resulting radius of the individual wakes ($r_{12}$, $r_{13}$, $r_{23}$) are shown below.
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{Figures/002234.png}
+        \caption{Schematics of a 5km by 5km wind farm containing three wind turbines $T_1$, $T_2$ and $T_3$ located at $(0,0)$, $(2,2)$ and $(3,4)$ respectively, with wind speed of $12m/s$ blowing at $\theta=0^o$, showing the wake interactions between all pairs of wind turbines $\{T_1,T_2\}$, $\{T_1,T_3\}$ and $\{T_2,T_3\}$ }
+        \label{002234}
+    \end{figure}
+    
+    For example, let there be three wind turbines $T_1$, $T_2$ and $T_3$ installed on the same 1km by 1km wind farm with coordinates $(0,0)$, $(2,2)$ and $(3,4)$ respectively, a wind direction of $0^o$ and a wind speed of $12m/s$, as shown in Figure \ref{002234}. First is to find the three pairs to determine if there are any single wake interactions. The pairs for this example would be $\{T_1,T_2\}$, $\{T_1,T_3\}$ and $\{T_2,T_3\}$. For each pair of wind turbines, the computation of  y-values ($y_{12}$, $y_{13}$, $y_{23}$), and the resulting radius of the individual wakes ($r_{12}$, $r_{13}$, $r_{23}$) are shown below.
     \begin{align*}
         y_{12}
         &=200m\cdot \left( \sqrt{(0-2)^2+(0-2)^2} \right)sin \left| (0^o\;mod\;90^o) - tan^{-1}\left|\frac{0-2}{0-2}\right| \right| \\
@@ -1243,7 +1250,14 @@ $350^o$	&301.150	&556.155	&118.414	&12.000	&12.000	&518.400	&518.400	&1036.800 \
 		&=1555.200\;kiloWatts
 	\end{align*}
     
-    The second scenario mentioned would happen if the three wind turbine $T_1$, $T_2$, and $T_3$ are located at $(0,1)$, $(1,0)$ and $(4,4)$ respectively where the wind blows at $\theta=220^o$. For each pair of wind turbines, the computation of  y-values ($y_{12}$, $y_{13}$, $y_{23}$), and the resulting radius of the individual wakes ($r_{12}$, $r_{13}$, $r_{23}$) are shown below.
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{Figures/011044-220.png}
+        \caption{Schematics of a 5km by 5km wind farm containing three wind turbines $T_1$, $T_2$ and $T_3$ located at $(0,1)$, $(1,0)$ and $(4,4)$ respectively, with wind speed of $12m/s$ blowing at $\theta=220^o$, showing the wake interactions between all pairs of wind turbines $\{T_1,T_2\}$, $\{T_1,T_3\}$ and $\{T_2,T_3\}$ }
+        \label{011044-220}
+    \end{figure}
+    
+    The second scenario mentioned would happen if the three wind turbine $T_1$, $T_2$, and $T_3$ are located at $(0,1)$, $(1,0)$ and $(4,4)$ respectively where the wind blows at $\theta=220^o$, as shown in Figure \ref{011044-220}. For each pair of wind turbines, the computation of  y-values ($y_{12}$, $y_{13}$, $y_{23}$), and the resulting radius of the individual wakes ($r_{12}$, $r_{13}$, $r_{23}$) are shown below.
     \begin{align*}
         y_{12}
         &=200m\cdot \left( \sqrt{(0-1)^2+(1-0)^2} \right) sin \left| (220^o\;mod\;90^o) - tan^{-1}\left|\frac{1-0}{0-1}\right| \right| \\
@@ -1284,7 +1298,7 @@ $350^o$	&301.150	&556.155	&118.414	&12.000	&12.000	&518.400	&518.400	&1036.800 \
         &= 338.251\;meters
     \end{align*}
     
-It is shown that the y-values of the wind turbine pairs are less than than the r-values. However, this doesn't mean that all pairs have wake interactions. Note that the formulas for x-value and, y-value only work if one turbine is covered by the swept area of the other wind turbine. From the the current configuration of wind turbines $T-1$, $T_2$ and $T_3$, the pair $\{T_1,T_2\}$ cannot show wake interaction as neither of them is covered by the swept area of the other. Hence, only the pairs $\{T_1,T_3\}$ and $\{T_2,T_3\}$ have single wake interactions where the wind turbine $T_3$ is the upstream wind turbine. With/that, the wind speed at wind turbine $T_3$ is $12\;m/s$ while the wind speeds at $T_1$ and $T_2$ are
+It is shown that the y-values of the wind turbine pairs are less than than the r-values. However, this doesn't mean that all pairs have wake interactions. Note that the formulas for x-value and, y-value only work if one turbine is covered by the swept area of the other wind turbine. From the the current configuration of wind turbines $T_1$, $T_2$ and $T_3$, the pair $\{T_1,T_2\}$ cannot show wake interaction as neither of them is covered by the swept area of the other. Hence, only the pairs $\{T_1,T_3\}$ and $\{T_2,T_3\}$ have single wake interactions where the wind turbine $T_3$ is the upstream wind turbine. With/that, the wind speed at wind turbine $T_3$ is $12\;m/s$ while the wind speeds at $T_1$ and $T_2$ are
 	\begin{align*}
         u_{1} &= u_\infty \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (998.508m)} \right)^2 \right] \\
         &=11.591\;m/s
@@ -1308,7 +1322,14 @@ giving a total power output for $\theta=220^o$ wind direction of
 		&=1450.828\;kiloWatts
 	\end{align*}
     
-    Changing the wind direction to $\theta=40^o$ would portray the third scenario. The y-values and r-values for each pair of wind turbines would be the same since the new wind direction is the opposite of the previous one, that is, the wind is reversed. Thus, the single wake interactions would exist for wind turbines pairs $\{T_1,T_3\}$ and $\{T_2,T_3\}$ where the wind turbine $T_3$ is the downstream wind turbine for both pairs. The expected wind speed at $T_3$ due to the wake of individual wakes of win turbines $T_1$ and $T_2$ are as follow.
+    \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{Figures/011044-40.png}
+        \caption{Schematics of a 5km by 5km wind farm containing three wind turbines $T_1$, $T_2$ and $T_3$ located at $(0,1)$, $(1,0)$ and $(4,4)$ respectively, with wind speed of $12m/s$ blowing at $\theta=40^o$, showing the wake interactions between all pairs of wind turbines $\{T_1,T_2\}$, $\{T_1,T_3\}$ and $\{T_2,T_3\}$ }
+        \label{011044-40}
+    \end{figure}
+    
+    Changing the wind direction to $\theta=40^o$ would portray the third scenario, as shown in Figure \ref{011044-40}. The y-values and r-values for each pair of wind turbines would be the same since the new wind direction is the opposite of the previous one, that is, the wind is reversed. Thus, the single wake interactions would exist for wind turbines pairs $\{T_1,T_3\}$ and $\{T_2,T_3\}$ where the wind turbine $T_3$ is the downstream wind turbine for both pairs. The expected wind speed at $T_3$ due to the wake of individual wakes of win turbines $T_1$ and $T_2$ are as follow.
     \begin{align*}
         u_{31} &= u_\infty \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (998.508m)} \right)^2 \right] \\
         &=11.591\;m/s
@@ -1379,15 +1400,15 @@ giving a total power output for $\theta=0^o$ wind direction of
 		&=1113.493\;kiloWatts
 	\end{align*}
 	
-	\subsection{Best Configuration of Three Wind Turbines}
-	Considering all possible locations of two wind turbines, the exhaustive search found a total of 2300 different configurations. Four of which are found to have the highest total power output where the three wind turbines are located at the three of the four corners of the wind farms as shown in Figure \ref{small3}.
+	%\subsection{Best Configuration of Three Wind Turbines}
+	%Considering all possible locations of two wind turbines, the exhaustive search found a total of 2300 different configurations. Four of which are found to have the highest total power output where the three wind turbines are located at the three of the four corners of the wind farms as shown in Figure \ref{small3}.
 	
-	Considering the wind farm configuration on the left where the wind turbines $T_1$, $T_2$ and $T_3$ are located at $(0,0)$, $(0,4)$ and $(4,0)$ respectively, the following can be observed.
-	\begin{enumerate}
-		\item Wind turbines $T_1$ and $T_2$ have wake interactions for wind directions $\theta=80^o$, $\theta=90^o$, $\theta=100^o$, $\theta=260^o$, $\theta=270^o$ and $\theta=280^o$.
-		\item Wind turbines $T_1$ and $T_3$ have wake interactions for wind directions $\theta=0^o$, $\theta=10^o$, $\theta=170^o$, $\theta=180^o$, $\theta=190^o$ and $\theta=350^o$.
-		\item Wind turbines $T_2$ and $T_3$ have wake interactions for wind directions $\theta=80^o$, $\theta=90^o$, $\theta=100^o$, $\theta=260^o$, $\theta=270^o$ and $\theta=280^o$.
-	\end{enumerate}
+	%Considering the wind farm configuration on the left where the wind turbines $T_1$, $T_2$ and $T_3$ are located at $(0,0)$, $(0,4)$ and $(4,0)$ respectively, the following can be observed.
+	%\begin{enumerate}
+		\%item Wind turbines $T_1$ and $T_2$ have wake interactions for wind directions $\theta=80^o$, $\theta=90^o$, $\theta=100^o$, $\theta=260^o$, $\theta=270^o$ and $\theta=280^o$.
+	%	\item Wind turbines $T_1$ and $T_3$ have wake interactions for wind directions $\theta=0^o$, $\theta=10^o$, $\theta=170^o$, %$\theta=180^o$, $\theta=190^o$ and $\theta=350^o$.
+		%\item Wind turbines $T_2$ and $T_3$ have wake interactions for wind directions $\theta=80^o$, $\theta=90^o$, $\theta=100^o$, %$\theta=260^o$, $\theta=270^o$ and $\theta=280^o$.
+	%\end{enumerate}
 	
 	
 	
