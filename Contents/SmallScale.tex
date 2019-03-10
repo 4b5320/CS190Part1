@@ -1400,19 +1400,335 @@ giving a total power output for $\theta=0^o$ wind direction of
 		&=1113.493\;kiloWatts
 	\end{align*}
 	
-	%\subsection{Best Configuration of Three Wind Turbines}
-	%Considering all possible locations of two wind turbines, the exhaustive search found a total of 2300 different configurations. Four of which are found to have the highest total power output where the three wind turbines are located at the three of the four corners of the wind farms as shown in Figure \ref{small3}.
+	\subsection{Extreme Configurations for Three Wind Turbines}
+	Considering all possible locations of two wind turbines, the exhaustive search found a total of 2300 different configurations. Four of which are found to have the highest total power output where the three wind turbines are located at the three of the four corners of the wind farms as shown in Figure \ref{small3}.
 	
-	%Considering the wind farm configuration on the left where the wind turbines $T_1$, $T_2$ and $T_3$ are located at $(0,0)$, $(0,4)$ and $(4,0)$ respectively, the following can be observed.
-	%\begin{enumerate}
-	%	\item Wind turbines $T_1$ and $T_2$ have wake interactions for wind directions $\theta=80^o$, $\theta=90^o$, $\theta=100^o$, $\theta=260^o$, $\theta=270^o$ and $\theta=280^o$.
-	%	\item Wind turbines $T_1$ and $T_3$ have wake interactions for wind directions $\theta=0^o$, $\theta=10^o$, $\theta=170^o$, %$\theta=180^o$, $\theta=190^o$ and $\theta=350^o$.
-		%\item Wind turbines $T_2$ and $T_3$ have wake interactions for wind directions $\theta=80^o$, $\theta=90^o$, $\theta=100^o$, %$\theta=260^o$, $\theta=270^o$ and $\theta=280^o$.
-	%\end{enumerate}
+	\begin{figure}[H]
+            \centering
+            \subfloat{{\includegraphics[width=3cm]{Figures/Chromosomes/3a.png} }}
+            \qquad
+            \subfloat{{\includegraphics[width=3cm]{Figures/Chromosomes/3b.png} }}
+            \qquad
+            \subfloat{{\includegraphics[width=3cm]{Figures/Chromosomes/3c.png} }}
+            \qquad
+            \subfloat{{\includegraphics[width=3cm]{Figures/Chromosomes/3d.png} }}
+            \caption{Optimal configurations of the small scale problem with 3 wind turbines using exhaustive search method.}
+            \label{small3}
+        \end{figure}
 	
+	Considering the wind farm configuration on the left of Figure \ref{small3} where the wind turbines $T_1$, $T_2$ and $T_3$ are located at $(0,0)$, $(0,4)$ and $(4,0)$ respectively, the following can be observed.
+	\begin{enumerate}
+		\item Wind turbines $T_1$ and $T_2$ have wake interactions for wind directions $\theta=80^o$, $\theta=90^o$, $\theta=100^o$, $\theta=260^o$, $\theta=270^o$ and $\theta=280^o$.
+		\item Wind turbines $T_1$ and $T_3$ have wake interactions for wind directions $\theta=0^o$, $\theta=10^o$, $\theta=170^o$, $\theta=180^o$, $\theta=190^o$ and $\theta=350^o$.
+		\item Wind turbines $T_2$ and $T_3$ have wake interactions for wind directions $\theta=120^o$, $\theta=130^o$, $\theta=140^o$, $\theta=150^o$, $\theta=300^o$, $\theta=310^o$, $\theta=320^o$ and $\theta=330^o$.
+	\end{enumerate}
 	
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[width=\linewidth]{Figures/schematicsBest3a.png}
+	    \caption{Schematic diagram of the 1km by 1km wind farm with three wind turbines installed $T_1$, $T_2$ and $T_3$ located at $(0,0)$, $(0,4)$ and $(4,0)$ respectively showing the single wake interaction for wind turbines $T_1$ and $T_2$ for wind directions $\theta=80^o$, $\theta=90^o$ and $\theta=100^o$ (Not in scale).}
+	    \label{schematicsBest3a}
+	\end{figure}
 	
+	For the pairs of wind turbines and corresponding wind directions mentioned above, the y-values should be less than or equal than the corresponding resulting radii. The computation of h-values (distances between pairs of wind turbines), angles $\phi$ and x-values as labelled in Figures \ref{schematicsBest3c}, \ref{schematicsBest3b} and \ref{schematicsBest3a}, are shown below.
+	\begin{align*}
+	    h_{\{T_1,T_2\}} &= (200m)\sqrt{(0-0)^2+(0-4)^2} = 800.000\;meters \\
+	    h_{\{T_1,T_3\}} &= (200m)\sqrt{(0-4)^2+(0-0)^2} = 800.000\;meters \\
+	    h_{\{T_2,T_3\}} &= (200m)\sqrt{(0-4)^2+(4-0)^2} = 1131.371\;meters 
+	\end{align*}
+	\begin{align*}
+	    \phi_{\{T_1,T_2\}} &= tan^{-1}\left|\frac{0-4}{0-0}\right| = \lim_{k\rightarrow 0}\frac{4}{k} = 90^o \\
+	    \phi_{\{T_1,T_3\}} &= tan^{-1}\left|\frac{4-0}{0-0}\right| = \lim_{k\rightarrow 0}\frac{4}{k} = 90^o \\
+	    \phi_{\{T_2,T_3\}} &= tan^{-1}\left|\frac{4-0}{0-4}\right| = 45^o
+	\end{align*}
+	\begin{align*}
+	    x_{\{T_1,T_2\}\theta=80^o}
+	    &= (800.000m)cos\left| (80^o\;mod\;90^o) - 90^o \right| = 787.846\;meters \\
+	    x_{\{T_1,T_2\}\theta=90^o}
+	    &= (800.000m)cos\left| 90^o - 90^o \right| = 800.000\;meters \\
+	    x_{\{T_1,T_2\}\theta=100^o}
+	    &= (800.000m)cos\left| (100^o\;mod\;90^o) - 90^o \right| = 138.919\;meters
+	\end{align*}
+	\begin{align*}
+	    x_{\{T_1,T_3\}\theta=0^o}
+	    &= (800.000m)cos\left| (0^o\;mod\;90^o) - 90^o \right| = 800.000\;meters \\
+	    x_{\{T_1,T_3\}\theta=10^o}
+	    &= (800.000m)cos\left| (10^o\;mod\;90^o) - 90^o \right| = 787.846\;meters \\
+	    x_{\{T_1,T_3\}\theta=350^o}
+	    &= (800.000m)cos\left| (350^o\;mod\;90^o) - 90^o \right| = 138.919\;meters
+	\end{align*}
+	\begin{align*}
+	    x_{\{T_2,T_3\}\theta=120^o}
+	    &= (800.000m)cos\left| (120^o\;mod\;90^o) - 90^o \right| = 1092.820\;meters \\
+	    x_{\{T_2,T_3\}\theta=130^o}
+	    &= (800.000m)cos\left| (130^o\;mod\;90^o) - 90^o \right| = 1127.066\;meters \\
+	    x_{\{T_2,T_3\}\theta=140^o}
+	    &= (800.000m)cos\left| (140^o\;mod\;90^o) - 90^o \right| = 1127.066\;meters \\
+	    x_{\{T_2,T_3\}\theta=150^o}
+	    &= (800.000m)cos\left| (150^o\;mod\;90^o) - 90^o \right| = 1092.820\;meters
+	\end{align*}
 	
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[width=\linewidth]{Figures/schematicsBest3b.png}
+	    \caption{Schematic diagram of the 1km by 1km wind farm with three wind turbines installed $T_1$, $T_2$ and $T_3$ located at $(0,0)$, $(0,4)$ and $(4,0)$ respectively showing the single wake interaction for wind turbines $T_1$ and $T_3$ for wind directions $\theta=350^o$, $\theta=0^o$ and $\theta=10^o$ (Not in scale).}
+	    \label{schematicsBest3b}
+	\end{figure}
+	
+	Between wind turbines $T_1$ and $T_2$, wind turbine $T_1$ is upstream for wind directions $\theta=80^o$, $\theta=90^o$ and $\theta=100^o$. The expected wind speed at $T_2$ due to the wake of $T_1$ for the mentioned wind directions are as follow while for other wind directions, the wind speed at any wind turbine due to the wake of any other win turbine is 12m/s.
+	\begin{align*}
+	    u_{21[\theta=80^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (787.846m)} \right)^2 \right] = 11.417\;m/s \\
+	    u_{21[\theta=90^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (800.000m)} \right)^2 \right] = 11.429\;m/s \\
+	    u_{21[\theta=100^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (138.919m)} \right)^2 \right] = 11.417\;m/s
+	\end{align*}
+	Reversing the wind directions gives the following.
+	\begin{align*}
+	    u_{12[\theta=260^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (787.846m)} \right)^2 \right] = 11.417\;m/s \\
+	    u_{12[\theta=270^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (800.000m)} \right)^2 \right] = 11.429\;m/s \\
+	    u_{12[\theta=280^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (138.919m)} \right)^2 \right] = 11.417\;m/s
+	\end{align*}
+	
+	Between wind turbines $T_1$ and $T_3$, wind turbine $T_1$ is upstream for wind directions $\theta=0^o$, $\theta=10^o$ and $\theta=350^o$. The expected wind speed at $T_3$ due to the wake of $T_1$ for the mentioned wind directions are as follow while for other wind directions, the wind speed at any wind turbine due to the wake of any other win turbine is 12m/s.
+	\begin{align*}
+	    u_{31[\theta=0^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (800.000m)} \right)^2 \right] = 11.429\;m/s \\
+	    u_{31[\theta=10^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (787.846m)} \right)^2 \right] = 11.417\;m/s \\
+	    u_{31[\theta=350^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (138.919m)} \right)^2 \right] = 11.417\;m/s
+	\end{align*}
+	Reversing the wind directions gives the following.
+	\begin{align*}
+	    u_{13[\theta=90^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (787.846m)} \right)^2 \right] = 11.417\;m/s \\
+	    u_{13[\theta=100^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (800.000m)} \right)^2 \right] = 11.429\;m/s \\
+	    u_{13[\theta=80^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (138.919m)} \right)^2 \right] = 11.429\;m/s
+	\end{align*}
+	
+	\begin{figure}[H]
+	    \centering
+	    \includegraphics[width=\linewidth]{Figures/schematicsBest3c.png}
+	    \caption{Schematic diagram of the 1km by 1km wind farm with three wind turbines installed $T_1$, $T_2$ and $T_3$ located at $(0,0)$, $(0,4)$ and $(4,0)$ respectively showing the single wake interaction for wind turbines $T_2$ and $T_3$ for wind directions $\theta=120^o$, $\theta=130^o$, $\theta=140^o$ and $\theta=150^o$ (Not in scale).}
+	    \label{schematicsBest3c}
+	\end{figure}
+	
+	Between wind turbines $T_2$ and $T_3$, wind turbine $T_2$ is upstream for wind directions $\theta=120^o$, $\theta=130^o$, $\theta=140^o$ and $\theta=150^o$. The expected wind speed at $T_3$ due to the wake of $T_2$ for the mentioned wind directions are as follow while for other wind directions, the wind speed at any wind turbine due to the wake of any other win turbine is 12m/s.
+	\begin{align*}
+	    u_{32[\theta=120^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (1092.820m)} \right)^2 \right] = 11.645\;m/s \\
+	    u_{32[\theta=130^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (1127.066m)} \right)^2 \right] = 11.662\;m/s \\
+	    u_{32[\theta=140^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (1127.066m)} \right)^2 \right] = 11.662\;m/s \\
+	    u_{32[\theta=150^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (1092.820m)} \right)^2 \right] = 11.645\;m/s
+	\end{align*}
+	Reversing the wind directions gives the following.
+	\begin{align*}
+	    u_{23[\theta=300^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (1092.820m)} \right)^2 \right] = 11.645\;m/s \\
+	    u_{23[\theta=310^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (1127.066m)} \right)^2 \right] = 11.662\;m/s \\
+	    u_{23[\theta=320^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (1127.066m)} \right)^2 \right] = 11.662\;m/s \\
+	    u_{23[\theta=330^o]} = (12m/s) \left[ 1-2(0.326794)\left( \frac{27.881m}{27.881m+(0.0943696) (1092.820m)} \right)^2 \right] = 11.645\;m/s
+	\end{align*}
+	
+	Using the expected wind speed at each wind turbine due to wake of any other wind turbine, the wind speed at each wind turbine due to all wake interactions from other wind turbines if there are any for  wind directions $\theta=0^o$ to $\theta=90^o$ are computed below.
+	\begin{align*}
+	    u_{3[\theta=0^o]} &= u_\infty\left( 1-\sqrt{\left( 1-\frac{u_{31[\theta=0^o]}}{u_{1[\theta=0^o]}} \right)^2 + \left( 1-\frac{u_{32[\theta=0^o]}}{u_{2[\theta=0^o]}} \right)^2} \right) \\
+	    &= (12m/s)\left( 1-\sqrt{\left( 1-\frac{11.429m/s}{12.000m/s} \right)^2 + \left( 1-\frac{12.000m/s}{12.000m/s} \right)^2} \right)
+	    &=11.429m/s
+	\end{align*}
+	
+	\singlespacing
+	\begin{table}[H]
+	    \centering
+	    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+	    \hline
+	    $\theta$ &  $u_{12}$ & $u_{13}$ & $u_{21}$ & $u_{23}$ & $u_{31}$ & $u_{32}$ & $u_{1}$ & $u_{2}$ & $u_{3}$ \\
+	    \hline
+	    $0^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 11.429 & 12.000 & 12.000 & 12.000 & 11.429 \\
+	    \hline
+	    $10^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 11.417 & 12.000 & 12.000 & 12.000 & 11.417 \\
+	    \hline
+	    $20^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $30^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $40^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $50^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $60^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $70^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $80^{o}$ & 12.000 & 12.000 & 11.417 & 12.000 & 12.000 & 12.000 & 12.000 & 11.417 & 12.000 \\
+	    \hline
+	    $90^{o}$ & 12.000 & 12.000 & 11.429 & 12.000 & 12.000 & 12.000 & 12.000 & 11.429 & 12.000 \\
+	    \hline
+	    $100^{o}$ & 12.000 & 12.000 & 11.417 & 12.000 & 12.000 & 12.000 & 12.000 & 11.417 & 12.000 \\
+	   \hline
+	    $110^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $120^{o}$ & 12.000 & 12.000 & 12.000 & 11.645 & 12.000 & 12.000 & 12.000 & 11.645 & 12.000 \\
+	    \hline
+	    $130^{o}$ & 12.000 & 12.000 & 12.000 & 11.662 & 12.000 & 12.000 & 12.000 & 11.662 & 12.000 \\
+	    \hline
+	    $140^{o}$ & 12.000 & 12.000 & 12.000 & 11.662 & 12.000 & 12.000 & 12.000 & 11.662 & 12.000 \\
+	    \hline
+	    $150^{o}$ & 12.000 & 12.000 & 12.000 & 11.645 & 12.000 & 12.000 & 12.000 & 11.645 & 12.000 \\
+	    \hline
+	    $160^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $170^{o}$ & 12.000 & 11.417 & 12.000 & 12.000 & 12.000 & 12.000 & 11.417 & 12.000 & 12.000 \\
+	    \hline
+	    $180^{o}$ & 12.000 & 11.429 & 12.000 & 12.000 & 12.000 & 12.000 & 11.429 & 12.000 & 12.000 \\
+	    \hline
+	    $190^{o}$ & 12.000 & 11.417 & 12.000 & 12.000 & 12.000 & 12.000 & 11.417 & 12.000 & 12.000 \\
+	    \hline
+	    $200^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $210^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $220^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $230^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $240^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $250^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $260^{o}$ & 11.417 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 11.417 & 12.000 & 12.000 \\
+	    \hline
+	    $270^{o}$ & 11.429 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 11.429 & 12.000 & 12.000 \\
+	    \hline
+	    $280^{o}$ & 11.417& 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 11.417 & 12.000 & 12.000 \\
+	    \hline
+	    $290^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $300^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 11.645 & 12.000 & 12.000 & 11.645 \\
+	    \hline
+	    $310^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 11.662 & 12.000 & 12.000 & 11.662 \\
+	    \hline
+	    $320^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 11.662 & 12.000 & 12.000 & 11.662 \\
+	    \hline
+	    $330^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 11.645 & 12.000 & 12.000 & 11.645 \\
+	    \hline
+	    $340^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+	    \hline
+	    $350^{o}$ & 12.000 & 12.000 & 12.000 & 12.000 & 11.417 & 12.000 & 12.000 & 12.000 & 11.417 \\
+	    \hline
+	    \end{tabular}
+	    
+	    \caption{Summary of expected wind speed at the three wind turbines $T_1$, $T_2$ and $T_3$ located at $(0,0)$, $(0,4)$ and $(4,0)$ respectively due to individual and overall wakes of other wind turbines for all wind directions.}
+	    \label{summaryBest3a}
+	\end{table}
+	\doublespacing
+	
+	\begin{align*}
+	    u_{3[\theta=10^o]} &= u_\infty\left( 1-\sqrt{\left( 1-\frac{u_{31[\theta=10^o]}}{u_{1[\theta=10^o]}} \right)^2 + \left( 1-\frac{u_{32[\theta=10^o]}}{u_{2[\theta=10^o]}} \right)^2} \right) \\
+	    &= (12m/s)\left( 1-\sqrt{\left( 1-\frac{11.417m/s}{12.000m/s} \right)^2 + \left( 1-\frac{12.000m/s}{12.000m/s} \right)^2} \right)
+	    &=11.417m/s
+	\end{align*}
+	\begin{align*}
+	    u_{2[\theta=80^o]} &= u_\infty\left( 1-\sqrt{\left( 1-\frac{u_{21[\theta=80^o]}}{u_{1[\theta=80^o]}} \right)^2 + \left( 1-\frac{u_{23[\theta=80^o]}}{u_{3[\theta=80^o]}} \right)^2} \right) \\
+	    &= (12m/s)\left( 1-\sqrt{\left( 1-\frac{11.417m/s}{12.000m/s} \right)^2 + \left( 1-\frac{12.000m/s}{12.000m/s} \right)^2} \right)
+	    &=11.417m/s
+	\end{align*}
+	\begin{align*}
+	    u_{2[\theta=90^o]} &= u_\infty\left( 1-\sqrt{\left( 1-\frac{u_{21[\theta=90^o]}}{u_{1[\theta=90^o]}} \right)^2 + \left( 1-\frac{u_{23[\theta=90^o]}}{u_{3[\theta=90^o]}} \right)^2} \right) \\
+	    &= (12m/s)\left( 1-\sqrt{\left( 1-\frac{11.429m/s}{12.000m/s} \right)^2 + \left( 1-\frac{12.000m/s}{12.000m/s} \right)^2} \right)
+	    &=11.429m/s
+	\end{align*}
+	and the rest are 12m/s. The summary of expected wind speed at wind turbines $T_1$, $T_2$ and $T_3$ due to wake of other wind turbines and the wind speed at each wind turbine due to overall wake interactions are shown in Table \ref{summaryBest3a}.
+	
+	Given the computed values for the wind speed at the three wind turbines for all wind directions, the power output of each wind turbine for all wind direction are shown in Table \ref{summaryBest3b}.
+	
+	\singlespacing
+	\begin{table}[H]
+	    \centering
+	    \begin{tabular}{|c|c|c|c|c|}
+	        \hline
+	        $\theta$ & $P_{1}$ & $P_{2}$ & $P_{3}$ & $P_ {tot}$ \\	 
+	        \hline
+	        $0^{o}$ & 518.400kW & 518.400kW & 447.864kW & 1484.664kW  \\
+	        \hline
+	        $10^{o}$ & 518.400kW & 518.400kW & 446.455kW & 1483.255kW  \\
+	        \hline
+	        $20^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $30^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $40^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $50^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $60^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $70^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $80^{o}$ & 518.400kW & 518.400kW & 446.455kW &  1483.255kW \\
+	        \hline
+	        $90^{o}$ & 518.400kW & 518.400kW & 447.864kW & 1484.664kW  \\
+	        \hline
+	        $100^{o}$ & 518.400kW & 518.400kW & 446.455kW & 1483.255kW  \\
+	        \hline
+	        $110^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $120^{o}$ & 518.400kW & 473.740kW & 518.400kW & 1510.540kW  \\
+	        \hline
+	        $130^{o}$ & 518.400kW & 475.817kW & 518.400kW & 1512.617kW  \\
+	        \hline
+	        $140^{o}$ & 518.400kW & 475.817kW & 518.400kW & 1512.617kW  \\
+	        \hline
+	        $150^{o}$ & 518.400kW & 473.740kW & 518.400kW & 1510.540kW  \\
+	        \hline
+	        $160^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $170^{o}$ & 446.455kW & 518.400kW & 518.400kW & 1483.255kW 
+	        \\
+	        \hline
+	        $180^{o}$ & 447.864kW & 518.400kW & 518.400kW & 1484.664kW  \\
+	        \hline
+	        $190^{o}$ & 446.455kW & 518.400kW & 518.400kW & 1483.255kW  \\
+	        \hline
+	        $200^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $210^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $220^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $230^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $240^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $250^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $260^{o}$ & 446.455kW & 518.400kW & 518.400kW & 1483.255kW  \\
+	        \hline
+	        $270^{o}$ & 447.864kW & 518.400kW & 518.400kW & 1484.664kW   \\
+	        \hline
+	        $280^{o}$ & 446.455kW & 518.400kW & 518.400kW & 1483.255kW  \\
+	        \hline
+	        $290^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $300^{o}$ & 518.400kW & 518.400kW & 473.740kW & 1510.540kW  \\
+	        \hline
+	        $310^{o}$ & 518.400kW & 518.400kW & 475.817kW & 1512.617kW  \\
+	        \hline
+	        $320^{o}$ & 518.400kW & 518.400kW & 475.817kW & 1512.617kW  \\
+	        \hline
+	        $330^{o}$ & 518.400kW & 518.400kW & 473.740kW & 1510.540kW  \\
+	        \hline
+	        $340^{o}$ & 518.400kW & 518.400kW & 518.400kW & 1555.200kW  \\
+	        \hline
+	        $350^{o}$ & 518.400kW & 518.400kW & 446.455kW & 1483.255kW  \\      
+	        \hline
+	    \end{tabular}
+	    \caption{Summary of power output of the three wind turbines $T_1$, $T_2$ and $T_3$ located at $(0,0)$, $(0,4)$ and $(4,0)$ respectively for all wind directions.}
+	    \label{summaryBest3b}
+	\end{table}
+	\doublespacing
+	
+	Using the values from Table \ref{summaryBest3b}, the total annual power output of the whole wind farm with the current configuration would be
+    \begin{align*}
+        P_{tot}
+        &= \sum_{\theta=0^o}^{350^o} \left( P_{1[\theta]} + P_{2[\theta]} + P_{3[\theta]} \right) \cdot \frac{1}{36} \\
+        &= \frac{1}{36}\left( P_{1[\theta=0^o]} + P_{2[\theta=0^o]} + P_{3[\theta=0^o]} \right) +...+ \frac{1}{36}\left( P_{1[\theta=350^o]} + P_{2[\theta=350^o]} + P_{3[\theta=350^o]} \right) \\
+        &= 41.241kW + 41.202kW + 43.200kW +...+ 41.202kW \\
+        &= 1521.681\;kiloWatts
+    \end{align*}
 	
 	
 	
